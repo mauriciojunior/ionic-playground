@@ -1,0 +1,17 @@
+<ion-view title="Teams" ng-controller="TeamsCtrl as vm">
+	<ion-content>
+		<div class="list">
+			<div class="item" ng-repeat="division in vm.teams">
+				<div class="item item-divider item-energized">{{division.divisionName}}</div>
+				<a href="#/app/teams/{{team.id}}" class="item item-icon-right" ng-repeat="team in division.divisionTeams">
+					<div class="row">
+						<div class="col">
+							<p>{{ team.name }}</p>
+						</div>
+					</div>
+					<i class="icon ion-chevron-right icon-accessory"></i>
+				</a>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
