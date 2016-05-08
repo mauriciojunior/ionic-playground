@@ -3,12 +3,12 @@ angular.module('eliteApp', ['ionic'])
 .run(function($ionicPlatform) {
 	$ionicPlatform.ready(function() {
 		if(window.cordova && window.cordova.plugins.Keyboard) {
-			cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+			cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true)
 		}
 		if(window.StatusBar) {
-			StatusBar.styleDefault();
+			StatusBar.styleDefault()
 		}
-	});
+	})
 })
 .config(function($stateProvider, $urlRouterProvider) {
 	$stateProvider
@@ -95,8 +95,8 @@ angular.module('eliteApp', ['ionic'])
 					templateUrl: 'app/rules/rules.html'
 				}
 			}
-		});
+		})
 
 
-	$urlRouterProvider.otherwise('/app/teams');
-});
+	$urlRouterProvider.otherwise('/app/teams')
+})
