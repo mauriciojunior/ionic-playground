@@ -1,15 +1,15 @@
-(function(window, document, undefined) {
-	'use strict';
+(function() {
+	'use strict'
 
-	angular.module('eliteApp').controller('LocationsCtrl', ['eliteApi', LocationsCtrl]);
+	angular
+		.module('eliteApp')
+		.controller('LocationsCtrl', LocationsCtrl)
 
-
+	LocationsCtrl.$injector = ['eliteApi']
 	function LocationsCtrl(eliteApi) {
-		var vm = this;
+		var vm = this
 
-		var data = eliteApi.getLeagueData();
-		vm.locations = data.locations;
+		var data = eliteApi.getLeagueData()
+		vm.locations = data.locations
 	}
-
-
-})(window, document);
+})()

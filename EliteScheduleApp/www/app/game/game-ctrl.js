@@ -1,16 +1,17 @@
-(function(window, document, undefined) {
-	'use strict';
+(function() {
+	'use strict'
 
-	angular.module('eliteApp').controller('GameCtrl', ['$stateParams', 'eliteApi',GameCtrl]);
+	angular
+		.module('eliteApp')
+		.controller('GameCtrl', GameCtrl)
 
+	GameCtrl.$injector = ['$stateParams', 'eliteApi']
 	function GameCtrl($stateParams, eliteApi) {
-		var vm = this;
+		var vm = this
 
-		var gameId = +$stateParams.id;
-		var data = eliteApi.getLeagueData();
+		var gameId = +$stateParams.id
+		var data = eliteApi.getLeagueData()
 
-		vm.game = _.find(data.games, { 'id': gameId });
+		vm.game = _.find(data.games, { id: gameId })
 	}
-
-
-})(window, document);
+})()

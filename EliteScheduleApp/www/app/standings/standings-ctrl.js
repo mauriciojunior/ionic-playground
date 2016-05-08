@@ -1,13 +1,15 @@
-(function(window, document, undefined) {
-	'use strict';
+(function() {
+	'use strict'
 
-	angular.module('eliteApp').controller('StandingsCtrl', ['eliteApi', StandingsCtrl]);
+	angular
+		.module('eliteApp')
+		.controller('StandingsCtrl', StandingsCtrl)
 
+	StandingsCtrl.$injector = ['eliteApi']
 	function StandingsCtrl(eliteApi) {
-		var vm = this;
-		var data = eliteApi.getLeagueData();
-		vm.standings = data.standings;
-		console.log(vm.standings)
+		var vm = this
+		var data = eliteApi.getLeagueData()
+		vm.standings = data.standings
 	}
 
-})(window, document);
+})()
